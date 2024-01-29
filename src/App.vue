@@ -15,6 +15,7 @@ function increment() {
   count.value++;
   console.log(name)
 
+  
 
 }
 </script>
