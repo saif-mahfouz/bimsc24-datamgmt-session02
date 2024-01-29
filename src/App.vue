@@ -8,42 +8,105 @@ import { ref } from "vue";
 
 // Define variables and constants
 var count = ref(0);
+let name = ref("Saif")
 
 // Define functions
 function increment() {
   count.value++;
+  console.log(name)
+
+
 }
 </script>
 
 <!-- Template is a HTML-based syntax that allows you to bind the rendered DOM elements
 with data, objects, functions etc. -->
 <template>
-  <div id="top-bar">
-    <div id="title-container">
-      <img class="logo-image" alt="Iaac logo" src="./assets/iaac-white.png" />
-      <h2>Digital Tools for Cloud-based Data Management</h2>
+
+<div id="app">
+  <button @click="createNewButton">{{name}}</button>
+  <button v-if="showSaifButton" @click="createSaifButton">Create Saif Button</button>
+</div>
+
+
+
+
+
+<div id="navbar" class="container">  
+        <div id="title">Saifs's bootcamp website</div>
+        <div id="logo">
+</div>     
+</div>
+
+    <div id="flex">
+
+        <div id="sidebar" class="container"> Sidebar </div>
+
+        <div id="main" class="container"> Text input </div>
     </div>
-  </div>
 
-  <div id="content">
-    <!-- First example - button -->
-    <!-- Here we define what function will be called when button is clicked. -->
-    <button @click="increment">Add one more</button>
-
-    <!-- Now we print the value. The syntax to print variable is {{ variable_name }}. -->
-    <p style="margin-left: 8px">Count is: {{ count }}</p>
-
-  </div>
 </template>
 
 <!-- Style is for CSS styling -->
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
-  color: #2c3e50;
+
+
+
+div{
+
+    /* put the borders in the inside of container */
+    box-sizing: border-box;
+}
+
+
+
+#navbar{
+
+    height: 50px;
+    border-color: red;
+
+
+}
+
+#flex{
+    
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+#sidebar{
+    
+    width:30%;
+    border-color: blue;
+
+}
+
+#main{
+    width:70%;
+    border-color: green;
+
+}
+
+#title{
+    width: 70%;
+    float:left;
+}
+
+#logo{
+    width: 30%;
+    height: 100%;
+    float:right;
+    text-align: right;
+
+}
+
+.container{
+
+    border-style: dotted;
+    border-width: 1px;
+
+
 }
 
 #top-bar {
